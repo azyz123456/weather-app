@@ -1,0 +1,270 @@
+/* RESET STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+    --bg_main: #0f022e;
+    --text_light: rgb(255, 255, 255);
+    --text_med: #681e92;
+    --text_dark: #2e0330;
+    --red: #fd6907;
+    --darkred: #914600;
+    --orange: #e092e0;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+  }
+
+  form {
+    border: 1px solid white;
+    border-radius: 30px;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+   
+  input {
+    -webkit-appearance: none;
+  }
+   
+  button,
+  input {
+    border: none;
+    background: none;
+    outline: none;
+    color: inherit;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  body {
+    font: 1rem/1.3 "Roboto", sans-serif;
+    background: var(--bg_main);
+    color: var(--text_dark);
+    padding: 70px;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  
+  /* SECTION #1
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .top-banner {
+    color: var(--text_light);
+  }
+  
+  .heading {
+    font-weight: bold;
+    text-align: center;
+    font-size: 4rem;
+    letter-spacing: 0.02em;
+    padding: 0 0 30px 0;
+    font-family: Arial, Geneva, Tahoma, sans-serif;
+    font-size: 72px;
+    background: -webkit-linear-gradient(rgb(235, 171, 112), rgb(201, 117, 183));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .top-banner form {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .top-banner form input {
+    font-size: 1rem;
+    font-weight: normal;
+    height: 40px;
+    padding: 5px 10px;
+    order: 2;
+    color: lightgray;
+  }
+  
+  .top-banner form input::placeholder {
+    color: currentColor; 
+  }
+  
+  .top-banner form button {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    padding: 15px 20px;
+    margin-left: 15px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .top-banner form .msg {
+    position: absolute;
+    top: 55px;
+    left: 0;
+    max-width: 450px;
+    min-height: 40px;
+    color: lightgray;
+  }
+  
+  
+  /* SECTION #2
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .ajax-section {
+    margin: 70px 0 20px;
+  }
+  
+  .ajax-section .cities {
+    display: grid;
+    grid-gap: 32px 20px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .ajax-section .city {
+    position: relative;
+    padding: 40px 10%;
+    border-radius: 20px;
+    background: var(--text_light);
+    color: var(--text_med);
+  }
+  
+  .ajax-section .city::after {
+    content: '';
+    width: 90%;
+    height: 50px;
+    position: absolute;
+    bottom: -12px;
+    left: 5%;
+    z-index: -1;
+    opacity: 0.3;
+    border-radius: 20px;
+    background: var(--text_light);
+  }
+  
+  .ajax-section figcaption {
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .ajax-section .city-temp {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--text_dark);
+  }
+  
+  .ajax-section .city sup {
+    font-size: 0.5em;
+  }
+  
+  .ajax-section .city-name sup {
+    padding: 0.2em 0.6em;
+    border-radius: 30px;
+    color: var(--text_light);
+    background: var(--orange);
+  }
+  
+  .ajax-section .city-icon {
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+  }
+  
+  @media screen and (max-width: 1000px) {
+    body {
+      padding: 30px;
+    }
+    
+    .ajax-section .cities {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media screen and (max-width: 700px) {
+    .heading,
+    .ajax-section .city-temp {
+      font-size: 3rem;
+    }
+    
+    .ajax-section {
+      margin-top: 20px;
+    }
+    
+    .top-banner form {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .top-banner form input,
+    .top-banner form button {
+      width: 100%;
+    }
+  
+    .top-banner form button {
+      margin: 20px 0 0 0;
+      order: 1;
+    }
+    
+    .top-banner form .msg {
+      position: static;
+      max-width: none;
+      min-height: 0;
+      margin-top: 10px;
+    }
+  
+    .ajax-section .cities {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    body {
+      padding: 15px;
+    }
+    
+    .ajax-section .cities {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+  
+  
+  /* FOOTER
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .page-footer {
+    text-align: right;
+    font-size: 1rem;
+    color: var(--text_light);
+    margin-top: 40px;
+  }
+  
+  .page-footer span {
+    color: var(--red);
+  }
+  
+  
+  .api a {
+    text-decoration: underline;
+  }
+  
+  .api a:hover {
+    text-decoration: none;
+  }
